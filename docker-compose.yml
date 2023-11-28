@@ -1,0 +1,48 @@
+version: '3.7'
+
+services:
+  server:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: backend-image-2
+    container_name: backend-container
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
+    env_file: ./backend/.env
+    networks:
+      - app-network
+  mongo:
+    image: mongo
+    container_name: mongo-container
+    volumes:
+      - data-volume:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - app-network
+  client:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: frontend-image-2
+    container_name: frontend-container
+    depends_on:
+      - server
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+
+networks:
+    app-network:
+        driver: bridge
+
+volumes:
+    data-volume:
+    node_modules:
+    web-root:
+# Rohitsharma-20
+# uHaK8cUC@1

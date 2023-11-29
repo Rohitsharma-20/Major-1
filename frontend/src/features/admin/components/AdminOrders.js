@@ -181,7 +181,7 @@ function AdminOrders() {
                             />
                           </div>
                           <span>
-                            {item.title} - #{item.quantity} - $
+                            {item.title} - #{item.quantity} - ₹
                             {item.discountPrice}
                           </span>
                         </div>

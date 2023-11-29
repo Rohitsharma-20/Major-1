@@ -1,5 +1,4 @@
 const passport = require("passport");
-const nodemailer = require("nodemailer");
 
 exports.isAuth = (req, res, done) => {
   return passport.authenticate("jwt");

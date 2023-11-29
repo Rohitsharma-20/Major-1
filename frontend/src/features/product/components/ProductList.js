@@ -448,11 +448,9 @@ function ProductGrid({ products, status }) {
                   <div>
                     <p className="text-sm block font-medium text-gray-900">
                       ${product.discountPrice}
-                      500
                     </p>
                     <p className="text-sm block line-through font-medium text-gray-400">
                       ${product.price}
-                      100
                     </p>
                   </div>
                 </div>

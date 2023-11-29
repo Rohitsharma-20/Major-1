@@ -120,7 +120,7 @@ export default function ProductList() {
   }, []);
 
   return (
-    <div className="bg-white">
+    <div className="bg-white"   style={{backgroundImage:"bg.JPG"}}>
       <div>
         <MobileFilter
           handleFilter={handleFilter}
